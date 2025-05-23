@@ -5,7 +5,7 @@ import Data from '../models/Data.js';
 
 router.get('/', async (req, res) => {
     try {
-        const latestData = await Data.find().sort({ date: -1 }).limit(10); // Last 10 entries
+        const latestData = await Data.find().sort({ date: -1 }); // Last 10 entries
         res.json(latestData);
     } catch (err) {
         res.status(500).json({ error: err.message });
